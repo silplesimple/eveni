@@ -1,16 +1,39 @@
 ﻿// EvenIC++.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
-
+//C++은 순차 프로그램
 #include <iostream>
+using namespace std;
 
-int main()
+int func1(int N)
 {
-    printf("Hello World\n");
-    printf("hello\tworld");
-    (void)getchar();
-    return 0;
+    int ret = 0;
+    for (int i = 1; i <= N; i++)
+    {
+        if (i % 3 == 0 || i % 5 == 0)ret += i;
+    }
+    return ret;
 }
 
+void test1()
+{
+    cout << "*****fun1 test *******\n";
+    int n[3] = { 16,34567,27639 };
+    int ans[3] = { 60,278812814,178254968 };
+    int result = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        result = func1(n[i]);
+        cout << "TC #" << i << '\n';
+        cout << "expected : " << ans[i] << " result : " << result;
+        if (ans[i] == result) cout << "...Correct!\n";
+        else cout << "...wrong\n";
+    }
+    cout << "******************************\n\n";
+        
+}
+int main()
+{
+    test1();
+}
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
 // 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
 
