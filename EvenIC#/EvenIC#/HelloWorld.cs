@@ -5,9 +5,9 @@ namespace EvenIC_
 {
     internal class HelloWorld
     {
-        static void Main(string[] args)
-        {
-            WriteLine("Hello, World!");
-        }
+        //static void Main(string[] args)
+        //{
+        //    WriteLine("Hello, World!");
+        //}
     }
 }
