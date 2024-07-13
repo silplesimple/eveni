@@ -37,6 +37,21 @@ int func3(int N)
     return 0;
     
 }
+int func4(int N)
+{
+    int answer = 0;
+    int i = 1;
+    //for (i = 1; i <= N; i*=2)//for문 증감식 i*=2;
+    //{
+    //    answer = i;
+    //}
+    /*while (i <= N)
+    {
+        answer = i;
+        i *= 2;       
+    }*/
+    return answer;
+}
 void test3()
 {
     cout << "******func3 test *******\n";
@@ -49,6 +64,22 @@ void test3()
         cout << "expected:" << ans[i] << "result:" << result;
         if (ans[i] == result)cout << "....Correct!\n";
         else cout << "....Wrong!\n";
+    }
+    cout << "****************************\n\n";
+}
+
+void test4()
+{
+    cout << "******func4 test ********\n";
+    int n[3] = { 5,97615282,1024 };
+    int ans[3] = { 4,67108864,1024 };
+    for (int i = 0; i < 3; i++)
+    {
+        int result = func4(n[i]);
+        cout << "TC #" << i << '\n';
+        cout << "expected:" << ans[i] << "result" << result;
+        if (ans[i] == result)cout << ".....Correct!\n";
+        else cout << ".....Wrong!\n";        
     }
     cout << "****************************\n\n";
 }
@@ -90,5 +121,6 @@ int main()
 {
     //test1();
     //test2();
-    test3();
+    //test3();
+    test4();
 }
