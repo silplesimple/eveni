@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace EvenIC_
 {
-    internal class Variable
+    internal class CS05
     {
         //static void Main(string[] args)
         //{

@@ -9,7 +9,7 @@ using static System.Console;
 
 namespace EvenIC_
 {
-    internal class WriteLineDemo1
+    internal class CS06
     {
         //static void Main(string[] args)
         //{

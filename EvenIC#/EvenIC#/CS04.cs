@@ -3,7 +3,8 @@ using static System.Math;
 
 namespace EvenIC_
 {
-    internal class HelloWorld
+    internal class CS04
+
     {
         //static void Main(string[] args)
         //{
