@@ -9,7 +9,7 @@ public class TheStack : MonoBehaviour
     private const float ERROR_MARGIN = 0.1f;
     private const float STACK_BOUNDS_GAIN = 0.25f;
     private const int COMBO_START_GAIN = 3;
-    
+
     private GameObject[] theStack;
     private Vector2 stackBounds = new Vector2(BOUNDS_SIZE, BOUNDS_SIZE);
 
@@ -22,7 +22,7 @@ public class TheStack : MonoBehaviour
     private float secondaryPosition;
 
     private bool isMovingOnX = true;
-    private bool gameOver=false;
+    private bool gameOver = false;
 
     private Vector3 desiredPosition;
     private Vector3 lastTilePosition;
@@ -31,12 +31,14 @@ public class TheStack : MonoBehaviour
     {
         theStack = new GameObject[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
+        {
             theStack[i] = transform.GetChild(i).gameObject;
+        }
 
         stackIndex = transform.childCount - 1;
     }
 
-    private void CreateRubble(Vector3 pos,Vector3 scale)
+    private void CreateRubble(Vector3 pos, Vector3 scale)
     {
         GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
         go.transform.localPosition = pos;
@@ -48,10 +50,10 @@ public class TheStack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(PlaceTile())
+            if (PlaceTile())
             {
-              SpawnTile();
-              scoreCount++;
+                SpawnTile();
+                scoreCount++;
             }
             else
             {
@@ -66,36 +68,36 @@ public class TheStack : MonoBehaviour
 
     private void MoveTile()
     {
-        if(gameOver)
+        if (gameOver)
         {
             return;
         }
         tileTransition += Time.deltaTime * tileSpeed;
-        if(isMovingOnX)
-        theStack[stackIndex].transform.localPosition = new Vector3(Mathf.Sin(tileTransition)* BOUNDS_SIZE, scoreCount,0);
+        if (isMovingOnX)
+            theStack[stackIndex].transform.localPosition = new Vector3(Mathf.Sin(tileTransition) * BOUNDS_SIZE, scoreCount, 0);
         else
-        theStack[stackIndex].transform.localPosition = new Vector3(secondaryPosition, scoreCount, Mathf.Sin(tileTransition) * BOUNDS_SIZE);
+            theStack[stackIndex].transform.localPosition = new Vector3(secondaryPosition, scoreCount, Mathf.Sin(tileTransition) * BOUNDS_SIZE);
     }
 
     private void SpawnTile()
     {
         lastTilePosition = theStack[stackIndex].transform.localPosition;
         stackIndex--;
-        if (stackIndex<0)        
+        if (stackIndex < 0)
             stackIndex = transform.childCount - 1;
 
         desiredPosition = (Vector3.down) * scoreCount;
         theStack[stackIndex].transform.localPosition = new Vector3(0, scoreCount, 0);
-        theStack[stackIndex].transform.localScale = new Vector3(stackBounds.x,1,stackBounds.y);
+        theStack[stackIndex].transform.localScale = new Vector3(stackBounds.x, 1, stackBounds.y);
     }
     private bool PlaceTile()
     {
         Transform t = theStack[stackIndex].transform;
-                
-        if(isMovingOnX)
+
+        if (isMovingOnX)
         {
             float deltaX = lastTilePosition.x - t.position.x;
-            if(Mathf.Abs(deltaX)>ERROR_MARGIN)
+            if (Mathf.Abs(deltaX) > ERROR_MARGIN)
             {
                 //cut the Tile
                 combo = 0;
@@ -104,7 +106,7 @@ public class TheStack : MonoBehaviour
                     return false;
 
                 float middle = lastTilePosition.x + t.localPosition.x / 2;
-                t.localScale=new Vector3(stackBounds.x, 1, stackBounds.y);
+                t.localScale = new Vector3(stackBounds.x, 1, stackBounds.y);
                 //CreateRubble()
                 t.localPosition = new Vector3(middle - (lastTilePosition.x / 2), scoreCount, lastTilePosition.z);
             }
@@ -120,7 +122,7 @@ public class TheStack : MonoBehaviour
                     t.localPosition = new Vector3(middle - (lastTilePosition.x / 2), scoreCount, lastTilePosition.z);
                 }
                 combo++;
-                t.localPosition = new Vector3 (lastTilePosition.x, scoreCount, lastTilePosition.z);
+                t.localPosition = new Vector3(lastTilePosition.x, scoreCount, lastTilePosition.z);
             }
         }
         else
@@ -136,11 +138,11 @@ public class TheStack : MonoBehaviour
 
                 float middle = lastTilePosition.z + t.localPosition.z / 2;
                 t.localScale = new Vector3(stackBounds.x, 1, stackBounds.y);
-                t.localPosition = new Vector3(lastTilePosition.x, scoreCount, middle -(lastTilePosition.z/2));
+                t.localPosition = new Vector3(lastTilePosition.x, scoreCount, middle - (lastTilePosition.z / 2));
             }
             else
             {
-                if(combo>COMBO_START_GAIN)
+                if (combo > COMBO_START_GAIN)
                 {
                     if (stackBounds.y > BOUNDS_SIZE)
                         stackBounds.y = BOUNDS_SIZE;
