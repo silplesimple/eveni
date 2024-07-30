@@ -25,11 +25,20 @@ public class EnemyMove : MonoBehaviour
         //Move
         rigid.velocity = new Vector2(nextMove, rigid.velocity.y);
 
+
         //Platform Check
         Vector2 frontVec = new Vector2(rigid.position.x+nextMove*0.3f,rigid.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
 
         RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask("Platform"));
+        // LayerMask.GetMask("Platform") + LayerMask.GetMask("Player")
+
+        // new Vector2(0, 1);
+        // Vector2.up;
+        // if(frontVec.magnitude < 3)
+        // if(frontVec.sqrMagnitude < 3 * 3)
+
+
         if (rayHit.collider == null)
         {
             Turn();
