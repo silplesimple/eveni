@@ -18,6 +18,9 @@ namespace Player
             //2 using static 지시문으로 줄여서 표현
             WriteLine(Pow(2, 10));
             WriteLine(Max(3, 5));
+
+            
+
         }
     }
 }
