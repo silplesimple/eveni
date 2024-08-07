@@ -32,7 +32,6 @@ namespace Player
         public string Name;
         public int Age;
     }
-
     
     internal class CS22
     {
