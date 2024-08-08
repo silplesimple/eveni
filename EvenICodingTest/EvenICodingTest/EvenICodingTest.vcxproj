@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\CodingPlayer\CodingTest5.cpp" />
     <ClCompile Include="CodingTest2.cpp" />
     <ClCompile Include="CodingTest1.cpp" />
     <ClCompile Include="CodingTest3.cpp" />
