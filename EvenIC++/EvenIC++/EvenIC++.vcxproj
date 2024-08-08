@@ -127,9 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Player\0x05.cpp" />
     <ClCompile Include="..\Player\BaaaaaaaaaakingDogx0x4.cpp" />
     <ClCompile Include="..\Player\BaaaaaKingDog0x03-1.cpp" />
     <ClCompile Include="..\Player\BaaaaakingDog0x03.cpp" />
+    <ClCompile Include="..\Player\Baaaakingdog0x04stl.cpp" />
+    <ClCompile Include="..\Player\STL stack.cpp" />
     <ClCompile Include="BaaaaakingDog.cpp" />
     <ClCompile Include="BaaaaakingDog0x02.cpp" />
     <ClCompile Include="EvenIC++.cpp" />

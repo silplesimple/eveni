@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Baaaakingdog0x04stl.cpp">
+    <ClCompile Include="stack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
