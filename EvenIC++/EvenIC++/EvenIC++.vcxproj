@@ -132,6 +132,8 @@
     <ClCompile Include="..\Player\BaaaaaKingDog0x03-1.cpp" />
     <ClCompile Include="..\Player\BaaaaakingDog0x03.cpp" />
     <ClCompile Include="..\Player\Baaaakingdog0x04stl.cpp" />
+    <ClCompile Include="..\Player\Queue.cpp" />
+    <ClCompile Include="..\Player\stack.cpp" />
     <ClCompile Include="..\Player\STL stack.cpp" />
     <ClCompile Include="BaaaaakingDog.cpp" />
     <ClCompile Include="BaaaaakingDog0x02.cpp" />
