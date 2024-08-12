@@ -19,10 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CodingTest7.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CodingTest7.h" />
+    <ClCompile Include="CodingTest8.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
