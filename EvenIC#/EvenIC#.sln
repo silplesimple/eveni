@@ -9,15 +9,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Player", "Player\Player.csproj", "{E07D9671-A3A3-4366-B08A-6418AD44D182}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatchFinallyDemo", "TryCatchFinallyDemo\TryCatchFinallyDemo.csproj", "{37E4C130-4562-40B7-BB31-AB167855AC79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryCatchFinallyDemo", "TryCatchFinallyDemo\TryCatchFinallyDemo.csproj", "{37E4C130-4562-40B7-BB31-AB167855AC79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stack", "stack\stack.csproj", "{1F07D000-CE70-4B8D-A06A-F8D3E2C5A252}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "stack", "stack\stack.csproj", "{1F07D000-CE70-4B8D-A06A-F8D3E2C5A252}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumerableDemo", "EnumerableDemo\EnumerableDemo.csproj", "{F5148E28-89D9-43E2-A547-4C7A0B6A6B2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumerableDemo", "EnumerableDemo\EnumerableDemo.csproj", "{F5148E28-89D9-43E2-A547-4C7A0B6A6B2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq", "Linq\Linq.csproj", "{78EE8797-B52E-46FE-8AF1-947BC1F3632A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linq", "Linq\Linq.csproj", "{78EE8797-B52E-46FE-8AF1-947BC1F3632A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "algorithm", "algorithm\algorithm.csproj", "{EC77B689-EF7B-4D9C-973A-C316C30757EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "algorithm", "algorithm\algorithm.csproj", "{EC77B689-EF7B-4D9C-973A-C316C30757EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#Class", "C#Class\C#Class.csproj", "{ED64BC24-10BE-4807-8F94-060175D91672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSpace", "NameSpace\NameSpace.csproj", "{E22B0B66-FA58-4024-8E0E-226E527ECEDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldClass", "FieldClass\FieldClass.csproj", "{F5297979-EC10-4861-A476-7D698CFA7C8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +59,18 @@ Global
 		{EC77B689-EF7B-4D9C-973A-C316C30757EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC77B689-EF7B-4D9C-973A-C316C30757EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC77B689-EF7B-4D9C-973A-C316C30757EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED64BC24-10BE-4807-8F94-060175D91672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED64BC24-10BE-4807-8F94-060175D91672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED64BC24-10BE-4807-8F94-060175D91672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED64BC24-10BE-4807-8F94-060175D91672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E22B0B66-FA58-4024-8E0E-226E527ECEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E22B0B66-FA58-4024-8E0E-226E527ECEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E22B0B66-FA58-4024-8E0E-226E527ECEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E22B0B66-FA58-4024-8E0E-226E527ECEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5297979-EC10-4861-A476-7D698CFA7C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5297979-EC10-4861-A476-7D698CFA7C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5297979-EC10-4861-A476-7D698CFA7C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5297979-EC10-4861-A476-7D698CFA7C8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
