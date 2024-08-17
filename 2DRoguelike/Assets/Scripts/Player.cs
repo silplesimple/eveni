@@ -1,5 +1,7 @@
+using Completed;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public class Player : MovingObject
@@ -21,19 +23,24 @@ public class Player : MovingObject
     private int food;
     private Vector2 touchOrigin = -Vector2.one;
 
+    SoundManager soundManager;
+    GameManager gameManager;
+
     protected override void Start()
     {
         animator = GetComponent<Animator>();
+        soundManager = SoundManager.instance;
+        gameManager = GameManager.instance;
 
-        food = GameManager.instance.playerFoodPoints;
+        food = gameManager.playerFoodPoints;
 
-        foodText.text = "Food: " + food;
+        FoodUpdate(0);
         base.Start();
     }
 
     private void Update()
     {
-        if (!GameManager.instance.playersTurn) return;
+        if (!gameManager.playersTurn) return;
 
         int horizontal = 0;
         int vertical = 0;
@@ -82,14 +89,14 @@ public class Player : MovingObject
     }
     private void OnDisable()
     {
-        GameManager.instance.playerFoodPoints = food;
+        gameManager.playerFoodPoints = food;
     }
 
     protected override void OnCantMove<T>(T Component)
     {
         Wall hitWall = Component as Wall;
         hitWall.DamageWall(wallDamage);
-        animator.SetTrigger("playerChop");
+        TriggerAnimation("playerChop");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -101,16 +108,14 @@ public class Player : MovingObject
         }
         else if(other.tag=="Food")
         {
-            food += pointPerFood;
-            foodText.text = "+" + pointPerFood+ " Food:" + food;
-            SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
+            FoodUpdate(pointPerFood);
+            soundManager.RandomizeSfx(eatSound1, eatSound2);
             other.gameObject.SetActive(false);
         }
         else if(other.tag=="Soda")
         {
-            food += pointPerSoda;
-            foodText.text = "+" + pointPerSoda + " Food:" + food;
-            SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
+            FoodUpdate(pointPerSoda);
+            soundManager.RandomizeSfx(eatSound1, eatSound2);
             other.gameObject.SetActive(false);
         }
     }
@@ -121,36 +126,57 @@ public class Player : MovingObject
 
     public void LoseFood(int loss)
     {
-        animator.SetTrigger("playerHit");
-        food -= loss;
-        foodText.text= "-" + loss + " Food: " + food;
-        CheckIfGameOver();
+        TriggerAnimation("playerHit");
+        FoodUpdate(-loss);
+    }
+
+    private void TriggerAnimation(string parameter)
+    {
+        animator.SetTrigger(parameter);
     }
 
     protected override void AttemptMove<T>(int xDir,int yDir)
     {
-        food--;
-        foodText.text = "Food: " + food;
+        FoodUpdate();
 
         base.AttemptMove<T>(xDir, yDir);
 
         RaycastHit2D hit;
         if(Move(xDir,yDir,out hit))
         {
-            SoundManager.instance.RandomizeSfx(moveSound1, moveSound2);
+            soundManager.RandomizeSfx(moveSound1, moveSound2);
         }
-        
-        CheckIfGameOver();
 
-        GameManager.instance.playersTurn = false;
+        gameManager.ChangePlayerTurn(false);
     }
     private void CheckIfGameOver()
     {
         if(food<=0)
         {
-            SoundManager.instance.PlayerSingle(gameOverSound);
-            SoundManager.instance.musicSource.Stop();
-            GameManager.instance.GameOver();
+            soundManager.PlayerSingle(gameOverSound);
+            soundManager.musicSource.Stop();
+            gameManager.GameOver();
         }
     }
+
+    void FoodUpdate(int value = -1)
+    {
+        food += value;
+        if (value == -1 || value == 0)
+        {
+            foodText.text = "Food: " + food;
+        }
+        else if (value < -1)
+        {
+            foodText.text = "-" + value + " Food: " + food;
+        }
+        else
+        {
+            foodText.text = "+" + value + " Food:" + food;
+            return;
+        }
+
+        CheckIfGameOver();
+    }
+
 }

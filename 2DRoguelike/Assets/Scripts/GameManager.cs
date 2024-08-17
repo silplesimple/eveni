@@ -94,8 +94,15 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(enemies[i].moveTime);
         }
 
-        playersTurn = true;
+        ChangePlayerTurn();
         enemiesMoving = false;
         Debug.Log(playersTurn);
+    }
+
+    public void ChangePlayerTurn(bool turn = true)
+    {
+        if(playersTurn == turn) { Debug.Log("Error"); }
+
+        playersTurn = turn;
     }
 }
