@@ -1,4 +1,4 @@
-﻿namespace EvenICS2
+﻿namespace Dinner
 {
     internal class Program
     {
