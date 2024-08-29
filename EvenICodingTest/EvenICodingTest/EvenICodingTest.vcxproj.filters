@@ -45,5 +45,11 @@
     <ClCompile Include="..\CodingPlayer\CodingTest10.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="..\CodingPlayer\CodingTest11.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CodingPlayer\CodingTest12.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

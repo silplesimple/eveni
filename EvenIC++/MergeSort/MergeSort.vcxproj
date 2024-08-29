@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f6537807-cbfd-4036-a130-20e4455f26f6}</ProjectGuid>
-    <RootNamespace>EvenICodingTest</RootNamespace>
+    <ProjectGuid>{25a3c8dc-53b6-4489-9e12-179995c3d0ad}</ProjectGuid>
+    <RootNamespace>MergeSort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,18 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\CodingPlayer\CodingTest10.cpp" />
-    <ClCompile Include="..\CodingPlayer\CodingTest11.cpp" />
-    <ClCompile Include="..\CodingPlayer\CodingTest12.cpp" />
-    <ClCompile Include="..\CodingPlayer\CodingTest5.cpp" />
-    <ClCompile Include="..\CodingPlayer\CodingTest6.cpp" />
-    <ClCompile Include="..\CodingPlayer\CodingTest7.cpp" />
-    <ClCompile Include="..\CodingPlayer\CodingTest8.cpp" />
-    <ClCompile Include="..\CodingPlayer\CodingTest9.cpp" />
-    <ClCompile Include="CodingTest2.cpp" />
-    <ClCompile Include="CodingTest1.cpp" />
-    <ClCompile Include="CodingTest3.cpp" />
-    <ClCompile Include="CodingTest4.cpp" />
+    <ClCompile Include="MergeSort.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
