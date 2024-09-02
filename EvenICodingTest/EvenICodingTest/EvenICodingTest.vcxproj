@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -132,6 +132,10 @@
     <ClCompile Include="..\CodingPlayer\CodingTest12.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest13.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest14.cpp" />
+    <ClCompile Include="..\CodingPlayer\CodingTest15.cpp" />
+    <ClCompile Include="..\CodingPlayer\CodingTest16.cpp" />
+    <ClCompile Include="..\CodingPlayer\CodingTest17.cpp" />
+    <ClCompile Include="..\CodingPlayer\CodingTest18.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest5.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest6.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest7.cpp" />
