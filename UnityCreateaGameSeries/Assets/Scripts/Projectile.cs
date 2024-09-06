@@ -5,13 +5,14 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public LayerMask collisionMask;
+    public Color trailColor;
     float speed = 10;
     float damage = 1;
 
     float lifetime = 3;
     float skinWidth = .1f;
 
-    private void Start()
+    private void Awake()
     {
         Destroy(gameObject, lifetime);
 
@@ -20,6 +21,8 @@ public class Projectile : MonoBehaviour
         {
             OnHitObject(initialCollisions[0],transform.position);
         }
+
+        GetComponent<TrailRenderer>().material.SetColor("_TintColor", trailColor);
     }
     public void SetSpeed(float newSpeed)
     {
@@ -41,9 +44,7 @@ public class Projectile : MonoBehaviour
         {
             OnHitObject(hit.collider,hit.point);
         }
-    }
-
-    
+    }    
 
     void OnHitObject(Collider c,Vector3 hitPoint)
     {

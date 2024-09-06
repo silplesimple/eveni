@@ -9,6 +9,7 @@ public class MapGenerator:MonoBehaviour
 
     public Transform tilePrefab;
     public Transform obstaclePrefab;
+    public Transform mapFloor;
     public Transform navmeshFloor;
     public Transform navmeshMastPrefab;
 
@@ -41,8 +42,8 @@ public class MapGenerator:MonoBehaviour
     {
         currentMap = maps[mapIndex];
         tileMap = new Transform[currentMap.mapSize.x, currentMap.mapSize.y];
-        System.Random prng = new System.Random(currentMap.seed);
-        GetComponent<BoxCollider>().size = new Vector3(currentMap.mapSize.x * tileSize, .05f, currentMap.mapSize.y * tileSize);
+        System.Random prng = new System.Random(currentMap.seed);       
+
         // Generating coords;
         allTileCoords = new List<Coord>();
         for(int x=0;x<currentMap.mapSize.x;x++)
@@ -129,18 +130,17 @@ public class MapGenerator:MonoBehaviour
         {
             Transform navMask = Instantiate(navmeshMastPrefab, direction * (currentMap.mapSize.x + MaxMapSize.x) / 4f * tileSize, Quaternion.identity) as Transform;
             navMask.parent = mapParent;
-            navMask.localScale = new Vector3((MaxMapSize.x - currentMap.mapSize.x) / 2f, 1, currentMap.mapSize.y) * tileSize;
-            navmeshFloor.localScale = new Vector3(MaxMapSize.x, MaxMapSize.y) * tileSize;
+            navMask.localScale = new Vector3((MaxMapSize.x - currentMap.mapSize.x) / 2f, 1, currentMap.mapSize.y) * tileSize;                       
         }
         else
         {
             Transform navMask = Instantiate(navmeshMastPrefab, direction * (currentMap.mapSize.y + MaxMapSize.y) / 4f * tileSize, Quaternion.identity) as Transform;
             navMask.parent = mapParent;
             navMask.localScale = new Vector3(currentMap.mapSize.x, 1,  (MaxMapSize.y - currentMap.mapSize.y) /2f) * tileSize;
-            //navMask.localScale = new Vector3(currentMap.mapSize.y*2, 1,  (maxcurrentMap.mapSize.x - currentMap.mapSize.x) /2) * tileSize;
-            navmeshFloor.localScale = new Vector3(MaxMapSize.x, MaxMapSize.y) * tileSize;
+            //navMask.localScale = new Vector3(currentMap.mapSize.y*2, 1,  (maxcurrentMap.mapSize.x - currentMap.mapSize.x) /2) * tileSize;                       
         }
-        
+        navmeshFloor.localScale = new Vector3(MaxMapSize.x, MaxMapSize.y) * tileSize;
+        mapFloor.localScale = new Vector3(currentMap.mapSize.x * tileSize, currentMap.mapSize.y * tileSize);
     }
 
     bool MapIsFullyAccessible(bool[,] obstacleMap,int currentObstacleCount)
