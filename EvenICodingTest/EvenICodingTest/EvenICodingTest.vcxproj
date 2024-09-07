@@ -137,6 +137,7 @@
     <ClCompile Include="..\CodingPlayer\CodingTest17.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest18.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest19.cpp" />
+    <ClCompile Include="..\CodingPlayer\CodingTest20.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest5.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest6.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest7.cpp" />
