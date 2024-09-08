@@ -79,8 +79,10 @@ public class Enemy : LivingEntity
 
     public override void TeakHit(float damage, Vector3 hitPoint, Vector3 hitDirection)
     {
+        AudioManager.instance.PlaySound("Impact", transform.position);
         if(damage>=health)
         {
+            AudioManager.instance.PlaySound("Enemy Death", transform.position);
             Destroy(Instantiate(deathEffect.gameObject, hitPoint, Quaternion.FromToRotation(Vector3.forward, hitDirection))as GameObject, deathEffect.startLifetime);
         }
         base.TeakHit(damage, hitPoint, hitDirection);
@@ -103,6 +105,7 @@ public class Enemy : LivingEntity
                 if(sqrDstToTarget<Mathf.Pow(attackDisatnaceThreshold+myCollisionRadius+targetCollisionRadius,2))
                 {
                     nextAttackTime = Time.time + timeBetweenAttacks;
+                    AudioManager.instance.PlaySound("Enemy Attack", transform.position);
                     StartCoroutine(Attack());
                 }            
             }

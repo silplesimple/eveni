@@ -9,7 +9,7 @@ public class Crosshairs : MonoBehaviour
     public Color dotHighlightColor;
     Color originalDotColor;
 
-    private void Start()
+    private void Awake()
     {
         Cursor.visible = false;
         originalDotColor = dot.color;
@@ -28,8 +28,7 @@ public class Crosshairs : MonoBehaviour
     public void DetectTargets(Ray ray)
     {
         if(Physics.Raycast(ray,100,targetMask))
-        {
-            Debug.Log("¿˚¿Ã¥Ÿ!!!");
+        {            
             dot.color = dotHighlightColor;
         }
         else

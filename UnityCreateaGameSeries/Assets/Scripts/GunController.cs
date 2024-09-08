@@ -8,10 +8,7 @@ public class GunController : MonoBehaviour
     public Gun[] allGuns;
     Gun equippedGun;
 
-    private void Start()
-    {
-        
-    }
+    
     public void EquipGun(Gun gunToEquip)
     {
         if (equippedGun != null)
@@ -50,8 +47,7 @@ public class GunController : MonoBehaviour
     public void Aim(Vector3 aimPoint)
     {
         if(equippedGun !=null)
-        {
-            Debug.Log("√—ø°¿”µ∆¥Ÿ");
+        {            
             equippedGun.Aim(aimPoint);
         }
     }
