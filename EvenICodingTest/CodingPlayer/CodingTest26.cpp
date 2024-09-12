@@ -21,8 +21,7 @@ int solution(vector<int> citations)
 				}
 				answer[i]++;				
 			}
-		}
-		
+		}		
 	}
 	sort(answer.rbegin(), answer.rend());
 	return answer[0];	
