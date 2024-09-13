@@ -111,5 +111,11 @@
     <ClCompile Include="..\CodingPlayer\TestAuto.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="..\CodingPlayer\CodingTest29.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CodingPlayer\CodingTest29-2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
