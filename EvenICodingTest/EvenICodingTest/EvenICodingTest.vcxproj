@@ -146,11 +146,14 @@
     <ClCompile Include="..\CodingPlayer\CodingTest26.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest27(fail).cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest27.cpp" />
+    <ClCompile Include="..\CodingPlayer\CodingTest28(fail).cpp" />
+    <ClCompile Include="..\CodingPlayer\CodingTest28.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest5.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest6.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest7.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest8.cpp" />
     <ClCompile Include="..\CodingPlayer\CodingTest9.cpp" />
+    <ClCompile Include="..\CodingPlayer\TestAuto.cpp" />
     <ClCompile Include="..\CodingPlayer\TestCode-Vector.cpp" />
     <ClCompile Include="CodingTest2.cpp" />
     <ClCompile Include="CodingTest1.cpp" />
