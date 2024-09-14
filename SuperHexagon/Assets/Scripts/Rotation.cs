@@ -23,7 +23,7 @@ public class Rotation : MonoBehaviour
 
     private Vector3 PowerPos(Vector3 vectorPos)
     {        
-        return vectorPos += new Vector3(10*ParentPower, 10*ParentPower, 10*ParentPower);
+        return vectorPos += new Vector3(0, 0, 10 * ParentPower);
     }
 
     private void RotationObject(Vector3 pos)
