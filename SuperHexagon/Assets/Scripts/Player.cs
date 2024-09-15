@@ -18,11 +18,11 @@ public class Player : MonoBehaviour
         SetPlayerSprite(); 
     }
     
+    
+    
     private void SetPlayerSprite()
     {
-        int RandomSpriteIndex = Random.Range(0, playerSprite.Length);
-        Debug.Log($"스프라이트 크기{playerSprite.Length}");
-        Debug.Log("이것은 랜덤 스프라이트 입니다"+RandomSpriteIndex);
+        int RandomSpriteIndex = Random.Range(0, playerSprite.Length);        
         spriteRenderer.sprite = playerSprite[RandomSpriteIndex];
     }
 }
