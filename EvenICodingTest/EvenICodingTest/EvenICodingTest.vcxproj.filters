@@ -147,5 +147,11 @@
     <ClCompile Include="..\CodingPlayer\Random-ex-2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="..\CodingPlayer\CodingTest33(fail).cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CodingPlayer\CodingTest33-2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
