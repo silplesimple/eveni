@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,6 +22,7 @@
     <ClCompile Include="..\CodingPlayer\bitset.cpp" />
     <ClCompile Include="..\CodingPlayer\colution2-1.cpp" />
     <ClCompile Include="..\CodingPlayer\solution1-2.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution2-2.cpp" />
     <ClCompile Include="bitset-ex.cpp" />
     <ClCompile Include="solution1-1.cpp" />
   </ItemGroup>
