@@ -21,8 +21,12 @@
   <ItemGroup>
     <ClCompile Include="..\CodingPlayer\bitset.cpp" />
     <ClCompile Include="..\CodingPlayer\colution2-1.cpp" />
+    <ClCompile Include="..\CodingPlayer\soltuion4-1(fail).cpp" />
     <ClCompile Include="..\CodingPlayer\solution1-2.cpp" />
     <ClCompile Include="..\CodingPlayer\solution2-2.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution3-1.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution3-2.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution4-2.cpp" />
     <ClCompile Include="bitset-ex.cpp" />
     <ClCompile Include="solution1-1.cpp" />
   </ItemGroup>
