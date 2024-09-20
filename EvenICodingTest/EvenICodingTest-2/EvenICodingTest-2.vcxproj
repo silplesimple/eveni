@@ -27,6 +27,9 @@
     <ClCompile Include="..\CodingPlayer\solution3-1.cpp" />
     <ClCompile Include="..\CodingPlayer\solution3-2.cpp" />
     <ClCompile Include="..\CodingPlayer\solution4-2.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution5-1.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution6-1.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution6-2.cpp" />
     <ClCompile Include="bitset-ex.cpp" />
     <ClCompile Include="solution1-1.cpp" />
   </ItemGroup>
