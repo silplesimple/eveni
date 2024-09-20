@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
     [SerializeField]
     Sprite[] playerSprite;
+    [SerializeField]
+    Vector3 playerPos;
+    //float
+    [SerializeField]
+    PlayerMove playerMove;
 
     private void Awake()
     {
@@ -17,9 +22,14 @@ public class Player : MonoBehaviour
     {
         SetPlayerSprite(); 
     }
-    
-    
-    
+
+    private void Update()
+    {
+        if(Input.GetAxis("Horizontal")!=0)
+        {
+            playerMove.Move(playerPos);
+        }
+    }
     private void SetPlayerSprite()
     {
         int RandomSpriteIndex = Random.Range(0, playerSprite.Length);        

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rotation : MonoBehaviour
 {
     [SerializeField]
-    float zPos = 10;
+    float zRot = 10;
     [SerializeField]
     float roationSpeed;
     public Vector3 vectorPos;
@@ -18,23 +18,23 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(zPos > 360)
+        if(zRot > 360)
         {
-            zPos = 0;
+            zRot = 0;
         }
-        zPos += roationSpeed*Time.deltaTime;
+        zRot += roationSpeed*Time.deltaTime;
         RotationObject(PowerPos(vectorPos));
         Debug.Log(vectorPos.x);
     }
 
-    private Vector3 PowerPos(Vector3 vectorPos,float zPos)
+    private Vector3 PowerPos(Vector3 vectorPos,float zRot)
     {         
-        return vectorPos += new Vector3(0, 0, zPos);
+        return vectorPos += new Vector3(0, 0, zRot);
     }
 
     private Vector3 PowerPos(Vector3 vectorPos)
     {
-        return vectorPos += new Vector3(0, 0, zPos);
+        return vectorPos += new Vector3(0, 0, zRot);
     }
 
     private void RotationObject(Vector3 pos)
