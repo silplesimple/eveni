@@ -37,7 +37,7 @@ public class Player : LivingEntity {
         Vector3 moveVelocity = moveInput.normalized * moveSpeed;
         controller.Move(moveVelocity);
 
-        //Look input
+        //Look inpu
         Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.up*gunController.GunHeight);
         float rayDistance;
