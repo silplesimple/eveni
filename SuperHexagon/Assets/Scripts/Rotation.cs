@@ -7,7 +7,7 @@ public class Rotation : MonoBehaviour
     [SerializeField]
     float zRot = 10;
     [SerializeField]
-    float roationSpeed;
+    float rotationSpeed;
     public Vector3 vectorPos;
     // Start is called before the first frame update
     void Start()
@@ -22,8 +22,8 @@ public class Rotation : MonoBehaviour
         {
             zRot = 0;
         }
-        zRot += roationSpeed*Time.deltaTime;
-        RotationObject(PowerPos(vectorPos));
+        zRot += rotationSpeed * Time.deltaTime;
+        RotationObject(PowerPos(vectorPos,zRot));
         Debug.Log(vectorPos.x);
     }
 
@@ -38,7 +38,7 @@ public class Rotation : MonoBehaviour
     }
 
     private void RotationObject(Vector3 pos)
-    {
+    {        
         gameObject.transform.rotation = Quaternion.Euler(pos);
     }
 }

@@ -12,14 +12,13 @@ public class Player : MonoBehaviour
     [SerializeField]
     PlayerMove playerMove;
     [SerializeField]
-    Rotation rotation;    
-
+    Rotation rotation;
     [SerializeField]
-    Vector3 moveInput;
-    float inputValue=0;
+    Transform playerMoveObj;
+        
+    public float moveInput;
     public float radius;
     public float playerSpeed = 0;
-
 
     private void Awake()
     {        
@@ -37,9 +36,12 @@ public class Player : MonoBehaviour
 
     private void InputPlayer()
     {
-        moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        moveInput = moveInput.normalized * playerSpeed;
-        playerMove.Move(moveInput);
+        moveInput = Input.GetAxisRaw("Horizontal")*playerSpeed*Time.deltaTime;       
+        if(moveInput!=0)
+        {
+            playerMove.Move(playerMoveObj,moveInput);
+        }
+        //Debug.Log()
     }
     //플레이어 스프라이트 설정
     private void SetPlayerSprite()
