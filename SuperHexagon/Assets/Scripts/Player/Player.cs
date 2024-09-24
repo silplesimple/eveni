@@ -36,7 +36,12 @@ public class Player : MonoBehaviour
 
     private void InputPlayer()
     {
-        moveInput = Input.GetAxisRaw("Horizontal")*playerSpeed*Time.deltaTime;       
+        moveInput = -Input.GetAxisRaw("Horizontal");
+        
+        // 입력 검사
+        
+        moveInput *= playerSpeed*Time.deltaTime;
+        
         if(moveInput!=0)
         {
             playerMove.Move(playerMoveObj,moveInput);
