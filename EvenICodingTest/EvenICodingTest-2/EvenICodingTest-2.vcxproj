@@ -31,6 +31,7 @@
     <ClCompile Include="..\CodingPlayer\solution10-1.cpp" />
     <ClCompile Include="..\CodingPlayer\solution10-2.cpp" />
     <ClCompile Include="..\CodingPlayer\solution10-3.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution11-1.cpp" />
     <ClCompile Include="..\CodingPlayer\solution2-2.cpp" />
     <ClCompile Include="..\CodingPlayer\solution3-1.cpp" />
     <ClCompile Include="..\CodingPlayer\solution3-2.cpp" />
