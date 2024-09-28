@@ -23,6 +23,7 @@
     <ClCompile Include="..\CodingPlayer\colution2-1.cpp" />
     <ClCompile Include="..\CodingPlayer\soltuion4-1(fail).cpp" />
     <ClCompile Include="..\CodingPlayer\solutioln9-1.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution 14-1.cpp" />
     <ClCompile Include="..\CodingPlayer\solution 7-1.cpp" />
     <ClCompile Include="..\CodingPlayer\solution 7-2.cpp" />
     <ClCompile Include="..\CodingPlayer\solution 8-1.cpp" />
@@ -35,6 +36,7 @@
     <ClCompile Include="..\CodingPlayer\solution12-1(fail).cpp" />
     <ClCompile Include="..\CodingPlayer\solution12-2.cpp" />
     <ClCompile Include="..\CodingPlayer\solution13-1.cpp" />
+    <ClCompile Include="..\CodingPlayer\solution14-2.cpp" />
     <ClCompile Include="..\CodingPlayer\solution2-2.cpp" />
     <ClCompile Include="..\CodingPlayer\solution3-1.cpp" />
     <ClCompile Include="..\CodingPlayer\solution3-2.cpp" />
