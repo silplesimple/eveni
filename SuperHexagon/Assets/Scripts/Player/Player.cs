@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {        
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        playerSpeed = 200f;
     }
     private void Start()
     {
@@ -37,6 +38,9 @@ public class Player : MonoBehaviour
     private void InputPlayer()
     {
         moveInput = -Input.GetAxisRaw("Horizontal");
+
+        PlayerSpriteFlip(moveInput);
+
         
         // 입력 검사
         
@@ -47,6 +51,18 @@ public class Player : MonoBehaviour
             playerMove.Move(playerMoveObj,moveInput);
         }
         //Debug.Log()
+    }
+
+    private void PlayerSpriteFlip(float moveInput)
+    {
+        if(moveInput<0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if(moveInput>0)
+        {            
+            spriteRenderer.flipX = true;
+        }
     }
     //플레이어 스프라이트 설정
     private void SetPlayerSprite()
