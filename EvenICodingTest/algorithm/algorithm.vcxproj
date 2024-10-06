@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -19,47 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\CodingPlayer\bitset.cpp" />
-    <ClCompile Include="..\CodingPlayer\colution2-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\soltuion4-1(fail).cpp" />
-    <ClCompile Include="..\CodingPlayer\solutioln9-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution 14-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution 7-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution 7-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution 8-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution 9-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution1-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution10-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution10-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution10-3.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution11-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution12-1(fail).cpp" />
-    <ClCompile Include="..\CodingPlayer\solution12-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution13-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution14-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution15-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution16-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution16-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution17-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution18-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution2-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution3-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution3-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution4-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution5-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution6-1.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution6-2.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution6-3.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution6-4.cpp" />
-    <ClCompile Include="..\CodingPlayer\solution8-2.cpp" />
-    <ClCompile Include="bitset-ex.cpp" />
-    <ClCompile Include="solution1-1.cpp" />
+    <ClCompile Include="BFS-1.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f5f63bec-cfa7-489e-8229-81c363622be7}</ProjectGuid>
-    <RootNamespace>EvenICodingTest2</RootNamespace>
+    <ProjectGuid>{dfd8e7d5-67b7-4e76-bbc7-e0fda8ffe67e}</ProjectGuid>
+    <RootNamespace>algorithm</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
