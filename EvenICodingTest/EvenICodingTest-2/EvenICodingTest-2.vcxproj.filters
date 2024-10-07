@@ -120,8 +120,5 @@
     <ClCompile Include="..\CodingPlayer\solution18-1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\CodingPlayer\solution19-1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
