@@ -28,8 +28,7 @@ public class Rectangle : Shape
     public float height;
     
     public override float CalculateArea()
-    {
-        Debug.Log("이것이 추상화의 대단함....!!");
+    {        
         return width * height;
     }
 }
