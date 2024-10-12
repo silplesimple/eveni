@@ -1,20 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class TopDownCharacterController : MonoBehaviour
 {
-    float timeDelta;
+    public event Action<Vector2> OnMoveEvent;
+    public event Action<Vector2> OnLookEvent;
     // Start is called before the first frame update
     void Start()
     {
-        timeDelta = 0f;   
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeDelta = Time.deltaTime;
-        Debug.Log(timeDelta);
+        
     }
 }
