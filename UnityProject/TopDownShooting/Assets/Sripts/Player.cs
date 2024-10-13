@@ -15,6 +15,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         timeDelta = Time.deltaTime;
-        Debug.Log(timeDelta);
+        //Debug.Log(timeDelta);
     }
 }
