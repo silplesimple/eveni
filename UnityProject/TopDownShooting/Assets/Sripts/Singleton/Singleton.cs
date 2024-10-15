@@ -11,8 +11,7 @@ public class Singleton<T> : MonoBehaviour where T: MonoBehaviour
         get
         {
             if (instance == null)
-            {
-                Debug.Log("인스턴스가 비어있어 만들어 버렸습니다 데헷");
+            {                
                 GameObject obj;
                 obj = GameObject.Find(typeof(T).Name);
                 if (obj == null)
@@ -29,11 +28,9 @@ public class Singleton<T> : MonoBehaviour where T: MonoBehaviour
         }
     }
 
-    public void DontDestroySingleton(T t_instance)
+    protected void DontDestroySingleton(T t_instance)
     {
         instance = t_instance;
         DontDestroyOnLoad(this);        
     }
-    
-    
 }

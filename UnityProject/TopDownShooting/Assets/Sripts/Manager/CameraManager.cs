@@ -10,7 +10,7 @@ public class CameraManager : Singleton<CameraManager>
 
     private void Awake()
     {
-        this.DontDestroySingleton(this);         
+        DontDestroySingleton(this);
     }
     private void Start()
     {

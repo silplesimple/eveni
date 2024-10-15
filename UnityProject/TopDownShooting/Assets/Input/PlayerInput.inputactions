@@ -24,13 +24,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "New action1",
-                    "type": "Button",
+                    "name": "Fire",
+                    "type": "Value",
                     "id": "d7208abe-d345-44c0-919e-8451f729d431",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -103,11 +103,11 @@
                 {
                     "name": "",
                     "id": "31317026-0c7b-4fa3-8388-77461d80155d",
-                    "path": "",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action1",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

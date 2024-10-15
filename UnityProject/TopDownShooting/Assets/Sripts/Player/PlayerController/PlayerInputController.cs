@@ -5,10 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputController : TopDownCharacterController
 {
-    private CameraManager cameraManager;
+    private CameraManager cameraManager;    
     
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
        cameraManager=CameraManager.Instance.initialize();
     }
 
@@ -25,7 +26,7 @@ public class PlayerInputController : TopDownCharacterController
     public void OnLook(InputValue value)
     {
         Vector2 newAim = value.Get<Vector2>();
-        Debug.Log("이벤트 실행!!"+newAim);
+        //Debug.Log("이벤트 실행!!"+newAim);
         Vector2 worldPos=cameraManager.CameraWorldPoint(newAim);
         newAim = (worldPos - (Vector2)transform.position).normalized;
 
@@ -37,6 +38,7 @@ public class PlayerInputController : TopDownCharacterController
 
     public void OnFire(InputValue value)
     {
-        Debug.Log("OnFire");
+        //Debug.Log("공격 동작 작동");
+        IsAttacking=value.isPressed;
     }
 }

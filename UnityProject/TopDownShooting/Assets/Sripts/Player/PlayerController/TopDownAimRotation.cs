@@ -9,13 +9,13 @@ public class TopDownAimRotation : MonoBehaviour
     [SerializeField] private SpriteRenderer armRenderer;
     [SerializeField] private Transform armPivot;
     [SerializeField] private SpriteRenderer CharacterRenderer;
-   
 
+    
     private TopDownCharacterController controller;
 
     private void Awake()
     {
-        controller = GetComponent<TopDownCharacterController>();
+        controller = GetComponent<TopDownCharacterController>();        
     }
     
     private void Start()
@@ -30,12 +30,16 @@ public class TopDownAimRotation : MonoBehaviour
 
     private void RotateArm(Vector2 direction)
     {
-        float rotz = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Debug.Log("내가 알고싶은 값:"+rotz);
+        float rotz = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;        
 
         bool onFlipX = Mathf.Abs(rotz) > 90f;
         //armRenderer.flipX = onFlipX;
         CharacterRenderer.flipX = onFlipX;
         armPivot.rotation = Quaternion.Euler(0, 0, rotz);
+    }
+
+    public Quaternion GetArmRotation()
+    {
+        return armPivot.rotation;
     }
 }

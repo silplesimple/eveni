@@ -11,13 +11,13 @@ TagManager:
   - 
   - Water
   - UI
-  - Floor
+  - Enemy
+  - Level
   - Player
+  - 
+  - 
+  - 
   - Wall
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3149341051
+    locked: 0
+  - name: Weapon
+    uniqueID: 2928913993
     locked: 0
   - name: Wall
     uniqueID: 2425844331
