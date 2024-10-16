@@ -44,6 +44,9 @@ TagManager:
   - name: Floor
     uniqueID: 1707688967
     locked: 0
+  - name: Particle
+    uniqueID: 3992194201
+    locked: 0
   - name: Player
     uniqueID: 3149341051
     locked: 0

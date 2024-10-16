@@ -41,13 +41,32 @@ public class RangedAttackController : MonoBehaviour
         }
 
         _rigidbody.velocity = _direction * _attackData.speed;
-    }
+    }    
 
-    private void OnTriggetEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("우리 함수 정상 작동 합니다");
         if(levelCollisionLayer.value==(levelCollisionLayer.value|(1<<collision.gameObject.layer)))
         {
             DestroyProjectile(collision.ClosestPoint(transform.position) - _direction * .2f, fxOnDestroy);
+        }
+        else if(_attackData.target.value==(_attackData.target.value|(1<<collision.gameObject.layer)))
+        {
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+            if(healthSystem!=null)
+            {
+                healthSystem.ChangeHealth(-_attackData.power);
+
+                if(_attackData.isOnKnockback)
+                {
+                    TopDownMovement movement=collision.GetComponent<TopDownMovement>();
+                    if(movement!=null)
+                    {
+                        movement.ApplyKnockback(transform, _attackData.knockbackPower, _attackData.knockbackTime);
+                    }
+                }
+            }
+            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
         }
     }
 
@@ -76,7 +95,7 @@ public class RangedAttackController : MonoBehaviour
     {
         if(createFx)
         {
-
+            _projectileManager.CreateImpactParticleAtPosition(position, _attackData);
         }
         gameObject.SetActive(false);
     }

@@ -39,7 +39,8 @@ public class TopDownCharacterController : MonoBehaviour
         }
 
         if(IsAttacking && timeSinceLastAttack> SetAttackSO.delay)
-        {            
+        {
+            Debug.Log("몬스터가 공격하냐");
             timeSinceLastAttack = 0;
             CallAttackEvent(SetAttackSO);
         }

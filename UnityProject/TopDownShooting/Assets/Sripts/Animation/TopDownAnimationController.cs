@@ -20,6 +20,12 @@ public class TopDownAnimationController : TopDownAnimations
     {
         controller.OnAttackEvent += Attacking;
         controller.OnMoveEvent += Move;
+
+        if(healthSystem!=null)
+        {
+            healthSystem.OnDamage += Hit;
+            healthSystem.OnInvincibilityEnd += InvincibilityEnd;
+        }
     }
 
     private void Move(Vector2 obj)
@@ -28,7 +34,7 @@ public class TopDownAnimationController : TopDownAnimations
     }
 
     private void Attacking(AttackSO obj)
-    {
+    {        
         animator.SetTrigger(Attack);
     }
 
