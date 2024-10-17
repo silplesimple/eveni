@@ -45,6 +45,9 @@ public class RangedAttackController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.isTrigger)
+            return;
+        
         Debug.Log("우리 함수 정상 작동 합니다");
         if(levelCollisionLayer.value==(levelCollisionLayer.value|(1<<collision.gameObject.layer)))
         {
