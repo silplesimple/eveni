@@ -6,6 +6,7 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private float healthChangeDelay = 0.5f;
+    public AudioClip damageClip;
 
     private CharacterStatsHandler statsHandler;
     private float timeSinceLastChange = float.MaxValue;
@@ -60,6 +61,11 @@ public class HealthSystem : MonoBehaviour
         else
         {
             OnDamage?.Invoke();
+
+            if(damageClip)
+            {
+                SoundManager.PlayClip(damageClip);
+            }
         }
 
         if (CurrentHealth <= 0f)

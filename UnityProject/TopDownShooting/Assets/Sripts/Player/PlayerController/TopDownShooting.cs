@@ -16,6 +16,8 @@ public class TopDownShooting : MonoBehaviour
 
     private TopDownCharacterController controller;
     private TopDownAimRotation aim;
+
+    public AudioClip shootingClip;
     private void Awake()
     {
         projectileManager = ProjectileManager.Instance;
@@ -64,10 +66,17 @@ public class TopDownShooting : MonoBehaviour
             projectileSpawnPosition.position,
             RotateVector2(aimDirection, angle),
             rangedAttackData);        
+
+        if(shootingClip)
+        {
+            SoundManager.PlayClip(shootingClip);
+        }
     }
 
     private static Vector2 RotateVector2(Vector2 v,float degree)
     {
         return Quaternion.Euler(0, 0, degree) * v;
     }
+    
+    
 }
