@@ -11,10 +11,11 @@ public class CameraManager : Singleton<CameraManager>
     private void Awake()
     {
         DontDestroySingleton(this);
+        camera = Camera.main;
     }
     private void Start()
     {
-        camera = Camera.main;
+        
     }
 
     public CameraManager initialize()
@@ -25,5 +26,5 @@ public class CameraManager : Singleton<CameraManager>
     public Vector2 CameraWorldPoint(Vector2 inputValue)
     {
         return camera.ScreenToWorldPoint(inputValue);
-    }
+    }    
 }
