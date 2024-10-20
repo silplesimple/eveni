@@ -16,9 +16,7 @@ public class TopDownRangeEnemyController : TopDownEnemyController
 
         IsAttacking = false;
         if(distance<=followRange)
-        {
-            Debug.Log("거리 안재냐?");
-            Debug.Log("내가 이벤트 스크립트를 안넣었네? ㅈㅅ");
+        {            
             if(distance<=ShootRange)
             {
                 int layerMaskTarget = Stats.CurrentStates.attackSO.target;

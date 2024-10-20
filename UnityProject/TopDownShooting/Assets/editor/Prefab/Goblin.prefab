@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8824251645470389494}
   - component: {fileID: 4286175399682464118}
   - component: {fileID: -8274289072638820402}
+  - component: {fileID: -7297415810485014631}
   m_Layer: 6
   m_Name: Goblin
   m_TagString: Untagged
@@ -179,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  damageClip: {fileID: 0}
 --- !u!114 &3146042670823554674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8485496231a9c4e4493e86e557b06c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followRange: 2.6
+  followRange: 9.9
   targetTag: Player
   characterRenderer: {fileID: 1952399488345234390}
 --- !u!114 &-8274289072638820402
@@ -228,6 +230,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aee0724a93a976545b9af5901cd511a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7297415810485014631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959372814046205807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3437b021dcfaaac40a2982d05d47007f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2991166778421700560
@@ -302,7 +316,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1388199165
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7becf30dba593d4419bf87c9741b8a32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

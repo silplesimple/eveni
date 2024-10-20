@@ -6,10 +6,11 @@ public class TopDownEnemyController : TopDownCharacterController
 {
     GameManager gameManager;
     protected Transform ClosetTarget { get; private set; }
+    
 
     protected override void Awake()
     {
-        base.Awake();
+        base.Awake();       
     }
 
     protected virtual void Start()
@@ -22,6 +23,7 @@ public class TopDownEnemyController : TopDownCharacterController
     {
 
     }
+    
 
     protected float DistanceToTarget()
     {

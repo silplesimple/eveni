@@ -37,8 +37,7 @@ public class TopDownShooting : MonoBehaviour
     }
 
     private void OnShoot(AttackSO attackSO)
-    {
-        Debug.Log("½´ÆÃ¹ÙÄí°£");
+    {       
         RangedAttackData rangedAttackData = attackSO as RangedAttackData;
         float projectileAngleSpace = rangedAttackData.mutipleProjectilesAngel;
         int numberOfProjectilePerShot = rangedAttackData.numberofProjectPerShot;
