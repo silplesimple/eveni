@@ -36,4 +36,10 @@ public class Hexagon : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void HexagonDuration()
+    {
+        //Çí»ç°ïÀ» ÁÙ¾îµê¸é¼­ ¿À´Â ±â´É
+
+    }
 }
