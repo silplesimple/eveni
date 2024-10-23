@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     float SpawnFloat = 0f;
     public static GameManager Instance =null;
     public Center center;
-    [SerializeField]
-    GameObject hexagonPrefab;
+    
+    
 
     private void Awake()
     {
@@ -22,13 +22,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        center = GetComponentInChildren<Center>();
+        //center = GetComponentInChildren<Center>();
     }
 
     private void Update()
     {
-        center.RotationCenter();      
-        SpawnManager.Instance.SpawnHexagon(hexagonPrefab);
+        //center.RotationCenter();      
+        //SpawnManager.Instance.SpawnHexagon(hexagonPrefab);
     }
 
 }
