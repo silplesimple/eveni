@@ -1,8 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
+using Scene = UnityEngine.SceneManagement.Scene;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +38,23 @@ public class GameManager : MonoBehaviour
         center= FindObjectOfType<Center>();
         StartCoroutine("Patton");        
     }
+
+    private void OnEnable()
+    {
+        // Action - µ®∏Æ∞‘¿Ã∆Æ
+        SceneManager.sceneLoaded += SceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= SceneLoaded;
+    }
+
+    private void SceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        center= FindObjectOfType<Center>();
+    }
+
 
     IEnumerator Patton()
     {
