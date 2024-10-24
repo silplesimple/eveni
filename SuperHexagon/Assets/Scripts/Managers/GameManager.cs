@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,20 +18,20 @@ public class GameManager : MonoBehaviour
         if (null==Instance)
         {
             Instance = this;
-
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+            Instance = null;
         }
         pattonManager = PattonManager.Instance;
-        //이 함수를 코루틴으로 턴마다 생성하도록
             
     }
 
     private void Start()
     {
+        center= FindObjectOfType<Center>();
         StartCoroutine("Patton");        
     }
 
@@ -37,9 +39,9 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            spawnFloat = Random.Range(0.5f, 1);            
+            spawnFloat = Random.Range(1f, 3);            
             int randomPatton = Random.Range(0, 6);
-            Debug.Log("코루틴"+randomPatton);
+            //Debug.Log("코루틴"+randomPatton);
             switch(randomPatton)
             {
                 case 1:
@@ -70,7 +72,9 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         center.RotationCenter();      
-        //SpawnManager.Instance.SpawnHexagon(hexagonPrefab);
+        
     }
+    
+   
 
 }

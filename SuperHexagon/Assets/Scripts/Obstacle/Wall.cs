@@ -9,7 +9,7 @@ public class Wall : Obstacle
     private Vector2 startPos;    
     [SerializeField] private float distance;
     [SerializeField] private float power;
-    [SerializeField] private float duration=2f;
+    [SerializeField] private float duration=3f;
     GameManager manager;
     // Start is called before the first frame update
     protected override void Awake()

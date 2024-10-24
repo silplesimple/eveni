@@ -14,11 +14,11 @@ public class PattonManager : MonoBehaviour
         {
             Instance = this;
 
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }        
 
     }

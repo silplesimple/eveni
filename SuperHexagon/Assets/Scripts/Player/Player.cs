@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class Player : MonoBehaviour
     Rotation rotation;
     [SerializeField]
     Transform playerMoveObj;
+
+    public event Action OnDeath;
         
     public float moveInput;
     public float radius;
@@ -23,7 +28,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {        
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        playerSpeed = 500f;
+        playerSpeed = 300f;
     }
     private void Start()
     {
@@ -33,6 +38,17 @@ public class Player : MonoBehaviour
     private void Update()
     {
         InputPlayer();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Æ®¸®°Å ±Â");
+        CallDeathEvent();
+    }
+
+    private void CallDeathEvent()
+    {
+        OnDeath?.Invoke();
     }
 
     private void InputPlayer()
