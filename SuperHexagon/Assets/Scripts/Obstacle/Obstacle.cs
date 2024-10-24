@@ -15,8 +15,9 @@ public class Obstacle : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
     protected void MoveObstacle(float duration)
-    {        
-        transform.position = new Vector2(0, duration);
+    {
+        transform.position = Vector2.MoveTowards(transform.position, Vector2.zero, duration);
+        DestoryObstacle();
     }
     protected void reduceObstacles(float duration)
     {
@@ -28,13 +29,21 @@ public class Obstacle : MonoBehaviour
         //이거 패턴으로 엮는거만 잘해보자
         //패턴엮고 다른 포지션에도 되게
         
-        spriteRenderer.size = new Vector2(duration * 1.4f, 1);
+        spriteRenderer.size = new Vector2(duration * 1.4f, 1.3f);
         if(spriteRenderer.size.x>1.4f)
         {
             
         }
         Debug.Log(spriteRenderer.size);
         
+    }
+    
+    private void DestoryObstacle()
+    {
+        if(spriteRenderer.size.x<1f)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

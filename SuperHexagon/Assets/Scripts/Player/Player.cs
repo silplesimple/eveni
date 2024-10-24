@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {        
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        playerSpeed = 200f;
+        playerSpeed = 500f;
     }
     private void Start()
     {

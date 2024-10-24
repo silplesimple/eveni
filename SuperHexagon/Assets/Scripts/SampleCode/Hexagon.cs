@@ -30,7 +30,7 @@ public class Hexagon : MonoBehaviour
     void Update()
     {
         transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
-        transform.rotation=GameManager.Instance.center.transform.rotation; 
+        //transform.rotation=GameManager.Instance.center.transform.rotation; 
         if(transform.localScale.x <=0.05f)
         {
             Destroy(gameObject);
