@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public TileBoard board;
     public CanvasGroup gameOver;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI hiscoreText;
 
+    private int score = 0;
     private void Start()
     {
         NewGame();
@@ -14,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        SetScore(0);
+        hiscoreText.text = LoadHiScore().ToString();
         gameOver.alpha = 0f;
         gameOver.interactable = false;
         board.ClearBoard();
@@ -27,6 +33,7 @@ public class GameManager : MonoBehaviour
         board.enabled = false;
         gameOver.interactable = true;
         StartCoroutine(Fade(gameOver, 1f,1f));
+        SaveHiScore();
     }
 
     private IEnumerator Fade(CanvasGroup canvasGroup,float to,float delay)
@@ -45,5 +52,32 @@ public class GameManager : MonoBehaviour
         }
 
         canvasGroup.alpha = to;
+    }
+
+    public void IncreaseScore(int points)
+    {
+        SetScore(score + points);
+    }
+
+    private void SetScore(int score)
+    {
+        this.score = score;
+
+        scoreText.text = score.ToString();
+    }
+
+    private void SaveHiScore()
+    {
+        int hiscore = LoadHiScore();
+
+        if(score>hiscore)
+        {
+            PlayerPrefs.SetInt("hiscore", score);
+        }
+    }
+
+    private int LoadHiScore()
+    {
+        return PlayerPrefs.GetInt("hiscore", 0);
     }
 }
