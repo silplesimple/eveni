@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4844585310893351476}
   - component: {fileID: 1361940123584720589}
   - component: {fileID: 4175249116074590952}
+  - component: {fileID: 4365844422078467199}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d156118ad3f74147b2fd0bf2d9937e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ab55e0acdb0dd943af995062aa5f224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 1}
+    oldSize: {x: 3.6363637, y: 0.90909094}
     newSize: {x: 4, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -130,3 +131,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4365844422078467199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2502928560115126705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6def0ace2f8dd40be3ddc6b8bf36a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 21300000, guid: 0d156118ad3f74147b2fd0bf2d9937e7, type: 3}
+  - {fileID: 21300000, guid: 90df6af621813b940acc544f26a58030, type: 3}
+  - {fileID: 21300000, guid: 7ead89668ef280f43b57122ba2d13228, type: 3}
+  - {fileID: 21300000, guid: 93bfc3fefdcbe5842bddbd59e0faec68, type: 3}
+  - {fileID: 21300000, guid: 846b32a6c2fe907428ede7111bad7e58, type: 3}
+  unbreakable: 0
