@@ -1,14 +1,22 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+
 public class Board : MonoBehaviour
 {
     public Tilemap tilemap { get; private set; }
     public Piece activePiece { get; private set; }
+    public NextPiece NextPiece { get; private set; }
     public TetrominoData[] tetrominoes;
     public Vector3Int spawnPosition;
     public Vector2Int boardSize = new Vector2Int(10, 20);
     public PlayerType playertype;
+    [SerializeField]
+    private Vector3Int nextSpawnPosition;
+    int score = 10;
+    UIManager uiManager;
+    //넥스트 피스를 생성할 변수를 소환 그곳에서 보관하고 있다가 엑티브 피스에서 카오스 엑시즈 체인지
+    
 
     public RectInt Bounds
     {
@@ -21,7 +29,8 @@ public class Board : MonoBehaviour
     }
 
     private void Awake()
-    {
+    {        
+        uiManager = FindObjectOfType<UIManager>();
         this.tilemap = GetComponentInChildren<Tilemap>();
         this.activePiece = GetComponentInChildren<Piece>();
         for(int i=0;i<this.tetrominoes.Length;i++)
@@ -35,11 +44,13 @@ public class Board : MonoBehaviour
         SpawnPiece();
     }
 
+    
     public void SpawnPiece()
-    {
+    {       
         int random = Random.Range(0, this.tetrominoes.Length);
+        //랜덤한 값에 테트리스 데이터를 가져옴
         TetrominoData data = this.tetrominoes[random];
-
+        //가져옴 값으로 피스를 초기화 하여 생성
         this.activePiece.Initialize(this, this.spawnPosition,data);
 
         if(IsValidposition(this.activePiece,this.spawnPosition))
@@ -115,7 +126,7 @@ public class Board : MonoBehaviour
     private bool IsLineFull(int row)
     {
         RectInt bounds = this.Bounds;
-
+        
         for(int col=bounds.xMin;col<bounds.xMax;col++)
         {
             Vector3Int position = new Vector3Int(col, row, 0);
@@ -132,7 +143,8 @@ public class Board : MonoBehaviour
     {
         RectInt bounds = this.Bounds;
 
-        for(int col=bounds.xMin;col<bounds.xMax;col++)
+        uiManager.PlusScore(score);
+        for (int col=bounds.xMin;col<bounds.xMax;col++)
         {
             Vector3Int position = new Vector3Int(col, row, 0);
             this.tilemap.SetTile(position, null);

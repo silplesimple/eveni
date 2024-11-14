@@ -18,5 +18,6 @@ public class Bgm : MonoBehaviour
         audioSource.clip = bgmclip;
         audioSource.Stop();
         audioSource.Play();
+        audioSource.loop = true;
     }
 }

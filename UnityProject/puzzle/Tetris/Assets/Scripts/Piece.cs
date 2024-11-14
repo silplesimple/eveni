@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//보드랑 다르게 움직이는 피스를 관리하기위한 스크립트
 public class Piece : MonoBehaviour
 {
     public Board board { get; private set; }
@@ -15,6 +16,7 @@ public class Piece : MonoBehaviour
 
     private float stepTime;
     private float lockTime;
+    //피스생성
     public void Initialize(Board board,Vector3Int position,TetrominoData data)
     {
         this.board = board;
