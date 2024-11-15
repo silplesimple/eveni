@@ -6,7 +6,7 @@ public class Board : MonoBehaviour
 {
     public Tilemap tilemap { get; private set; }
     public Piece activePiece { get; private set; }
-    public NextPiece NextPiece { get; private set; }
+    //public NextPiece NextPiece { get; private set; }
     public TetrominoData[] tetrominoes;
     public Vector3Int spawnPosition;
     public Vector2Int boardSize = new Vector2Int(10, 20);
@@ -46,11 +46,12 @@ public class Board : MonoBehaviour
 
     
     public void SpawnPiece()
-    {       
-        int random = Random.Range(0, this.tetrominoes.Length);
+    {
+        //Random.Range(0, this.tetrominoes.Length);
+        int random = activePiece.nextPiece.randomCellLength;
         //랜덤한 값에 테트리스 데이터를 가져옴
         TetrominoData data = this.tetrominoes[random];
-        //가져옴 값으로 피스를 초기화 하여 생성
+        Debug.Log(activePiece.nextPiece.randomCellLength);
         this.activePiece.Initialize(this, this.spawnPosition,data);
 
         if(IsValidposition(this.activePiece,this.spawnPosition))
@@ -67,6 +68,7 @@ public class Board : MonoBehaviour
     {
         this.tilemap.ClearAllTiles();
     }
+    //피스의 데이터를 가지고 타일을 세팅
     public void Set(Piece piece)
     {
         for(int i = 0; i < piece.cells.Length;i++)
@@ -123,6 +125,10 @@ public class Board : MonoBehaviour
         }
     }
 
+    public Tile GetTile(int index)
+    {
+        return tetrominoes[index].tile;
+    }
     private bool IsLineFull(int row)
     {
         RectInt bounds = this.Bounds;
