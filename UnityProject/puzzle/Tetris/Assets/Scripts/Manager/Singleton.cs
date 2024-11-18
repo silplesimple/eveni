@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+//매니저급 클래스를 하나만 두기위해 사용
+public class Singleton<T> : MonoBehaviour where T : Component
 {
     private static T instance;
 
@@ -18,26 +19,41 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
                 if(instance ==null)
                 {
-                    // 새로운 게임 오브젝트를 생성하여 해당 컴포넌트를 추가한다.
-                    GameObject obj = new GameObject(typeof(T).Name, typeof(T));
-                    // 생성된 게임 오브젝트에서 해당 컴포넌트를 instance에 저장한다.
-                    instance = obj.GetComponent<T>();
+                    SetupInstance();                    
                 }
             }
-
             return instance;
         }
         
     }
-    private void Awake()
+    protected virtual void Awake()
     {
-        if(transform.parent !=null && transform.root !=null)// 해당 오브젝트가 자식 오브젝트라면
+        RemoveDuplicates();
+        Debug.Log("인스턴스의 이름"+instance.name);
+    }
+    private static void SetupInstance()
+    {
+        instance = (T)FindObjectOfType(typeof(T));
+
+        if(instance ==null)
         {
-            DontDestroyOnLoad(this.transform.root.gameObject);
+            GameObject gameObj = new GameObject();
+            gameObj.name = typeof(T).Name;
+            instance = gameObj.AddComponent<T>();
+            DontDestroyOnLoad(gameObj);
+        }
+    }
+
+    private void RemoveDuplicates()
+    {
+        if(instance==null)
+        {
+            instance = this as T;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            DontDestroyOnLoad(this.gameObject);// 해당 오브젝트가 최 상위 오브젝트 라면 자신을 DonDestroyOnLoad처리
+            Destroy(gameObject);
         }
     }
 }

@@ -15,6 +15,12 @@ public class UIManager : Singleton<UIManager>
         score += stageScore;
         scoreText.text = score.ToString();
     }
-    
-    
+
+    protected override void Awake()
+    {
+        base.Awake();
+        Debug.Log("¾ßÈ£");
+    }
+
+
 }
