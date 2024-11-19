@@ -67,29 +67,29 @@ public class Piece : MonoBehaviour
         switch (playerType)
         {
             case PlayerType.Player1:
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (Input.GetKeyDown(KeySetting.keys[KeyAction.LEFTROTATE]))
                 {
                     Rotate(-1);
                 }
-                else if (Input.GetKeyDown(KeyCode.E))
+                else if (Input.GetKeyDown(KeySetting.keys[KeyAction.RIGHTROTATE]))
                 {
                     Rotate(1);
                 }
-                if (Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKeyDown(KeySetting.keys[KeyAction.LEFT]))
                 {
                     Move(Vector2Int.left);
                 }
-                else if (Input.GetKeyDown(KeyCode.D))
+                else if (Input.GetKeyDown(KeySetting.keys[KeyAction.RIGHT]))
                 {
                     Move(Vector2Int.right);
                 }
 
-                if (Input.GetKeyDown(KeyCode.S))
+                if (Input.GetKeyDown(KeySetting.keys[KeyAction.DOWN]))
                 {
                     Move(Vector2Int.down);
                 }
 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeySetting.keys[KeyAction.HardDrop]))
                 {
                     HardDrop();
                 }
