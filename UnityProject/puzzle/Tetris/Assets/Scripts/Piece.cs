@@ -42,6 +42,8 @@ public class Piece : MonoBehaviour
     //보드 오브젝트의 업데이트 작업이 이뤄짐
     private void Update()
     {
+        //이거 함수로 바꿔 써봄
+        //5분만 해볼까..?
         //일단 클리어하고
         this.board.Clear(this);
 

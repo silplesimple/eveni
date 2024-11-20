@@ -5,6 +5,7 @@ using UnityEngine;
 public enum KeyAction {DOWN,LEFT,RIGHT,LEFTROTATE,RIGHTROTATE,HardDrop,KEYCOUNT}
 //키를 저장해주는 스크립트
 
+//내가 적어본걸 한번 풀어보기
 public static class KeySetting { public static Dictionary<KeyAction, KeyCode> keys = new Dictionary<KeyAction, KeyCode>(); }
 public class KeyManager: Singleton<KeyManager>
 {
