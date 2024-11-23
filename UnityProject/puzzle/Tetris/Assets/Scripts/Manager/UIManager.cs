@@ -4,8 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : Singleton<UIManager>
+public class UIManager : MonoBehaviour
 {
+    private GameManager _gameManager;
+    
     [SerializeField]
     TextMeshProUGUI scoreText;    
     public TextMeshProUGUI[] player1Text;
@@ -17,24 +19,19 @@ public class UIManager : Singleton<UIManager>
     private GameObject player2Panel;
     [SerializeField]
     private GameObject Option;
-    
-    
+
+    public void Init(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+        
+        SetKeyBoard();
+    }
     
     //점수 추가
     public void PlusScore(int stageScore)
     {
         score += stageScore;
         scoreText.text = score.ToString();
-    }
-
-    protected override void Awake()
-    {
-        base.Awake();        
-    }
-
-    private void Start()
-    {
-        SetKeyBoard();
     }
     
     private void Update()

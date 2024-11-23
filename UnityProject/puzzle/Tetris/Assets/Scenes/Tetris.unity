@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -3431,7 +3431,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -3565,7 +3565,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -6480,7 +6480,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -6615,7 +6615,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386955102}
-  - component: {fileID: 1386955103}
   m_Layer: 0
   m_Name: KeyManager
   m_TagString: Untagged
@@ -6638,18 +6637,6 @@ Transform:
   m_Father: {fileID: 733885941}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1386955103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386955101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df599fef108dc3f47a8af903154e23c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1415371552
 GameObject:
   m_ObjectHideFlags: 0
@@ -7943,7 +7930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -8334,7 +8321,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -8864,7 +8851,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -9308,7 +9295,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -9442,7 +9429,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -9773,7 +9760,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -10261,7 +10248,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3
@@ -10840,7 +10827,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386955103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyManager, Assembly-CSharp
         m_MethodName: ChangeKey
         m_Mode: 3

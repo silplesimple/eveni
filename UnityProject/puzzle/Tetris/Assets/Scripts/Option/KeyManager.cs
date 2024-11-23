@@ -25,20 +25,24 @@ public static class KeySetting
 
     
 }
-public class KeyManager: Singleton<KeyManager>
+public class KeyManager
 {
-
+    private GameManager _gameManager;
+    private UIManager uiManager;
+    
+    
     //키를 보관해주는 변수를 어떻게 선언해볼까
     //키에는 무슨 값이 있어야 될까     
     private KeyCode[] playerKeys1 = new KeyCode[] { KeyCode.S, KeyCode.A, KeyCode.D, KeyCode.Q, KeyCode.E,KeyCode.Space };
     private KeyCode[] playerKeys2 = new KeyCode[] { KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftBracket, KeyCode.RightBracket,   KeyCode.RightShift };
     int key = -1;
 
-    private UIManager uiManager;
-    protected override void Awake()
+    public void Init(GameManager gameManager)
     {
-        base.Awake();
-        uiManager = FindObjectOfType<UIManager>();
+        _gameManager = gameManager;
+        uiManager = gameManager.UIManager;
+        
+        
         //input = Input.GetKeyDown(KeyCode.W);
         //input.GetHashCode
         for (int i = 0; i < (int)KeyAction.KEYCOUNT; i++)
@@ -47,10 +51,6 @@ public class KeyManager: Singleton<KeyManager>
             KeySetting.keys2.Add((KeyAction)i, playerKeys2[i]);
         }
     }
-    private void Start()
-    {
-        
-    }    
     
 
     private void OnGUI()
