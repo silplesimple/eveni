@@ -12,6 +12,7 @@ public class Piece : MonoBehaviour
     public Vector3Int[] cells { get; private set; }
     public Vector3Int position { get; private set; }
     public int rotationIndex { get; private set; }
+    private UIManager uiManager;
 
     public float stepDelay = 1f;
     public float lockDelay = 0.5f;
@@ -39,87 +40,90 @@ public class Piece : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        uiManager = FindObjectOfType<UIManager>();        
+    }
     //보드 오브젝트의 업데이트 작업이 이뤄짐
     private void Update()
     {
-        //이거 함수로 바꿔 써봄
-        //5분만 해볼까..?
-        //일단 클리어하고
-        this.board.Clear(this);
-
-        this.lockTime += Time.deltaTime;
-        //인풋으로 움직이고
-        PlayerInput(board.playertype);
-        //->> 여기가 넥스트 피스에서 사용한 정보를 가져다가 피스에게 옮겨줌
-        //->> 그러면 해야하는 건 넥스트 피스에서 피스 셀 데이터 타일 데이터 가지고 와서
-        //->> 그 데이터만 옮겨주기
-        //->>어떤 상황에 하냐면 바닥에 붙은 상황에 다음 피스를 생성하는 상황에
-        //->> 다음 피스를 랜덤으로 생성하지 말고 
-        //->> 가지고 있던 피스 정보를 전달
-        if (Time.time>=this.stepTime)
-        {
-            Step();
-        }
-        //움직였으니 그거 정보로 피스를 옮김
-        this.board.Set(this);
+        GameBoard();
     }
 
+    private void GameBoard()
+    {
+        if (!uiManager.isOptionActive())
+        {
+            this.board.Clear(this);
+
+            this.lockTime += Time.deltaTime;
+
+            PlayerInput(board.playertype);
+
+            if (Time.time >= this.stepTime)
+            {
+                Step();
+            }
+            //움직였으니 그거 정보로 피스를 옮김
+            this.board.Set(this);
+        }
+    }
     private void PlayerInput(PlayerType playerType)
     {
         switch (playerType)
         {
             case PlayerType.Player1:
-                if (Input.GetKeyDown(KeySetting.keys[KeyAction.LEFTROTATE]))
+                if (Input.GetKeyDown(KeySetting.keys1[KeyAction.LEFTROTATE]))
                 {
                     Rotate(-1);
                 }
-                else if (Input.GetKeyDown(KeySetting.keys[KeyAction.RIGHTROTATE]))
+                else if (Input.GetKeyDown(KeySetting.keys1[KeyAction.RIGHTROTATE]))
                 {
                     Rotate(1);
                 }
-                if (Input.GetKeyDown(KeySetting.keys[KeyAction.LEFT]))
+                if (Input.GetKeyDown(KeySetting.keys1[KeyAction.LEFT]))
                 {
                     Move(Vector2Int.left);
                 }
-                else if (Input.GetKeyDown(KeySetting.keys[KeyAction.RIGHT]))
+                else if (Input.GetKeyDown(KeySetting.keys1[KeyAction.RIGHT]))
                 {
                     Move(Vector2Int.right);
                 }
 
-                if (Input.GetKeyDown(KeySetting.keys[KeyAction.DOWN]))
+                if (Input.GetKeyDown(KeySetting.keys1[KeyAction.DOWN]))
                 {
                     Move(Vector2Int.down);
                 }
 
-                if (Input.GetKeyDown(KeySetting.keys[KeyAction.HardDrop]))
+                if (Input.GetKeyDown(KeySetting.keys1[KeyAction.HardDrop]))
                 {
                     HardDrop();
                 }
                 break;
             case PlayerType.Player2:
-                if (Input.GetKeyDown(KeyCode.LeftBracket))
+                if (Input.GetKeyDown(KeySetting.keys2[KeyAction.LEFTROTATE]))
                 {
                     Rotate(-1);
                 }
-                else if (Input.GetKeyDown(KeyCode.RightBracket))
+                else if (Input.GetKeyDown(KeySetting.keys2[KeyAction.RIGHTROTATE]))
                 {
                     Rotate(1);
                 }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyDown(KeySetting.keys2[KeyAction.LEFT]))
                 {
                     Move(Vector2Int.left);
                 }
-                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                else if (Input.GetKeyDown(KeySetting.keys2[KeyAction.RIGHT]))
                 {
-                    Move(Vector2Int.right); 
+                    Move(Vector2Int.right);
                 }
 
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (Input.GetKeyDown(KeySetting.keys2[KeyAction.DOWN]))
                 {
                     Move(Vector2Int.down);
                 }
 
-                if (Input.GetKeyDown(KeyCode.RightShift))
+                if (Input.GetKeyDown(KeySetting.keys2[KeyAction.HardDrop]))
                 {
                     HardDrop();
                 }

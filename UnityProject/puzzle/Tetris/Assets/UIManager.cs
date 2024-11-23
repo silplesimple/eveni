@@ -8,8 +8,17 @@ public class UIManager : Singleton<UIManager>
 {
     [SerializeField]
     TextMeshProUGUI scoreText;    
-    public TextMeshProUGUI[] keyBoardText;
+    public TextMeshProUGUI[] player1Text;
+    public TextMeshProUGUI[] player2Text;
     int score;
+    [SerializeField]
+    private GameObject player1Panel;
+    [SerializeField]
+    private GameObject player2Panel;
+    [SerializeField]
+    private GameObject Option;
+    
+    
     
     //점수 추가
     public void PlusScore(int stageScore)
@@ -25,18 +34,39 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        for(int i=0;i<keyBoardText.Length;i++)
-        {
-            keyBoardText[i].text = KeySetting.keys[(KeyAction)i].ToString();
-        }
+        SetKeyBoard();
     }
-
+    
     private void Update()
     {
-        for (int i = 0; i < keyBoardText.Length; i++)
+        if (Player1KeyOption() || Player2KeyOption())
         {
-            keyBoardText[i].text = KeySetting.keys[(KeyAction)i].ToString();
+            SetKeyBoard();
         }
+
+    }
+
+    private void SetKeyBoard()
+    {        
+        for (int i = 0; i < player1Text.Length; i++)
+        {
+            player1Text[i].text = KeySetting.keys1[(KeyAction)i].ToString();
+            player2Text[i].text = KeySetting.keys2[(KeyAction)i].ToString();
+        }
+    }
+    public bool Player1KeyOption()
+    {        
+        return player1Panel.activeSelf;
+    }
+
+    public bool Player2KeyOption()
+    {
+        return player2Panel.activeSelf;
+    }
+
+    public bool isOptionActive()
+    {
+        return Option.activeSelf ;
     }
 
 }

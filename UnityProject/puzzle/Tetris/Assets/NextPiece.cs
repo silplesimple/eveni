@@ -8,6 +8,7 @@ public class NextPiece : MonoBehaviour
     //가지고 있는 기능만 구현
     public Tile tile;
     public Board board;
+    public Board nextBoard;
     //public Piece trackingPiece;
     public TetrominoData[] boardTetromino;
     public bool isCreate=true;
@@ -29,6 +30,10 @@ public class NextPiece : MonoBehaviour
     private void Start()
     {
         boardTetromino = board.tetrominoes;                
+        if(board!=null)
+        {
+            nextBoard = board;
+        }
     }
 
     private void LateUpdate()
