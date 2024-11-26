@@ -13,10 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Algorithm">
+      <UniqueIdentifier>{f388db1e-1aaa-4796-b83d-da338bba37af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Algorithm\BFS">
+      <UniqueIdentifier>{60591df6-fc19-40ef-a671-76653d5e2900}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Algorithm.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="BFS.cpp">
+      <Filter>소스 파일\Algorithm\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="BFSex1.cpp">
+      <Filter>소스 파일\Algorithm\BFS</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
