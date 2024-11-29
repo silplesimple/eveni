@@ -125,6 +125,7 @@ public class Board : MonoBehaviour
         }
     }
 
+    
     public Tile GetTile(int index)
     {
         return tetrominoes[index].tile;

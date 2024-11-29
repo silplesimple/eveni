@@ -27,7 +27,7 @@ public static class KeySetting
 }
 public class KeyManager
 {
-    private GameManager _gameManager;
+    private GameManager _gameManager; 
     private UIManager uiManager;
     
     
@@ -35,7 +35,7 @@ public class KeyManager
     //키에는 무슨 값이 있어야 될까     
     private KeyCode[] playerKeys1 = new KeyCode[] { KeyCode.S, KeyCode.A, KeyCode.D, KeyCode.Q, KeyCode.E,KeyCode.Space };
     private KeyCode[] playerKeys2 = new KeyCode[] { KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftBracket, KeyCode.RightBracket,   KeyCode.RightShift };
-    int key = -1;
+    private int key = -1;
 
     public void Init(GameManager gameManager)
     {
@@ -52,7 +52,7 @@ public class KeyManager
         }
     }
     
-
+    //이거 한번 같으면서 다른거로 변경해보기
     private void OnGUI()
     {
         //키보드의 이벤트가 실행되면 그 키의 값이 딕셔너리의 값으로 들어감
@@ -77,6 +77,10 @@ public class KeyManager
     //public void ChangeKeySetting()
 
     //버튼을 누르면 그 버튼의 키값을 불러오는 것
+    //이기능을 OnGUI에 의지 하지않고 
+    //변경해보기
+    //이 기능은 버튼을 누르고 그 버튼에 키값에 맞는 딕셔너리에 키코드를 받아 그 키코드를 딕셔너리에 벨류에 넣는것 
+    //그러니 충분히 바꿀수 있는 여지가 있다.
     public void ChangeKey(int num)
     {
         key = num;
