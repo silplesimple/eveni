@@ -14,7 +14,9 @@ public class Board : MonoBehaviour
     [SerializeField]
     private Vector3Int nextSpawnPosition;
     int score = 10;
-    UIManager uiManager;
+    private GameManager _gameManager;
+
+    private int ClearCount = 0;
     //넥스트 피스를 생성할 변수를 소환 그곳에서 보관하고 있다가 엑티브 피스에서 카오스 엑시즈 체인지
     
 
@@ -29,11 +31,16 @@ public class Board : MonoBehaviour
     }
 
     private void Awake()
-    {        
-        uiManager = FindObjectOfType<UIManager>();
+    {
+        Init();
+    }
+    
+    public void Init()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
         this.tilemap = GetComponentInChildren<Tilemap>();
         this.activePiece = GetComponentInChildren<Piece>();
-        for(int i=0;i<this.tetrominoes.Length;i++)
+        for (int i = 0; i < this.tetrominoes.Length; i++)
         {
             this.tetrominoes[i].Initalize();
         }
@@ -117,6 +124,9 @@ public class Board : MonoBehaviour
             if(IsLineFull(row))
             {
                 LineClear(row);
+                //ToDo :: 여기서 카운트를 셀수 있는지 확인
+                //스코어 매니저는 스코어를 받아서 사용할 수있는지 보니깐
+                //스코어를 저장은 보드마다 하기
             }
             else
             {
@@ -150,7 +160,10 @@ public class Board : MonoBehaviour
     {
         RectInt bounds = this.Bounds;
 
-        uiManager.PlusScore(score);
+        _gameManager.UIManager.PlusScore(score);
+        //ToDo :: 나중에 클리어 함수로 만들어서 점수 산출
+        ClearCount += 1;
+        Debug.Log("클리어 라인 횟수: "+ ClearCount);
         for (int col=bounds.xMin;col<bounds.xMax;col++)
         {
             Vector3Int position = new Vector3Int(col, row, 0);

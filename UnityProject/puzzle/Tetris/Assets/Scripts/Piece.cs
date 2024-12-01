@@ -53,7 +53,7 @@ public class Piece : MonoBehaviour
     private void GameBoard()
     {
         if (!uiManager.isOptionActive())
-        {
+        {            
             this.board.Clear(this);
 
             this.lockTime += Time.deltaTime;
@@ -132,13 +132,13 @@ public class Piece : MonoBehaviour
     }
     private void Step()
     {
+        
         this.stepTime = Time.time + this.stepDelay;
 
         Move(Vector2Int.down);
 
         if(this.lockTime>=this.lockDelay)
-        {
-            
+        {            
             Lock();
         }
     }

@@ -28,8 +28,7 @@ public class Singleton<T> : MonoBehaviour where T : Component
     }
     protected virtual void Awake()
     {
-        RemoveDuplicates();
-        Debug.Log("인스턴스의 이름"+instance.name);
+        RemoveDuplicates();       
     }
     private static void SetupInstance()
     {

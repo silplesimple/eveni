@@ -8,7 +8,8 @@ public class GameManager : Singleton<GameManager>
     public UIManager UIManager { get; private set; }
     public HandleToSave HandleToSave { get; private set; }
     
-    public ScoreManager ScoreManager { get; private set; }
+    public ScoreManager ScoreManager { get; private set; }    
+    
     private int Stage;
     //TODO:: 스테이지 관리 시스템
 

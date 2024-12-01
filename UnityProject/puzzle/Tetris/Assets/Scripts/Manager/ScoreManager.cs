@@ -21,10 +21,13 @@ public enum standardScore
     TetrisAllClear=2000,
     BackToBackAllClear=3200,
 }
+
+//ToDO 클래스를 만들어서 점수를 관리?
 public class ScoreManager : MonoBehaviour
 {
     private GameManager _gameManager;
     private int score = 3;
+    public int ClearCount = 0;
 
     public void Init(GameManager gameManager)
     {
