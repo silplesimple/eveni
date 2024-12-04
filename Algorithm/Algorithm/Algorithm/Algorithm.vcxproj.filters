@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\Algorithm\BFS">
       <UniqueIdentifier>{60591df6-fc19-40ef-a671-76653d5e2900}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Algorithm\CodingTest">
+      <UniqueIdentifier>{eeaee4ff-e0c1-464f-b72d-573e9d477a43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BFS.cpp">
@@ -26,6 +29,9 @@
     </ClCompile>
     <ClCompile Include="BFSex1.cpp">
       <Filter>소스 파일\Algorithm\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="CodingTest1.cpp">
+      <Filter>소스 파일\Algorithm\CodingTest</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
