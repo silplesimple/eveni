@@ -22,6 +22,7 @@
     <ClCompile Include="BFS.cpp" />
     <ClCompile Include="BFSex1.cpp" />
     <ClCompile Include="CodingTest1.cpp" />
+    <ClCompile Include="CodingTest2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
