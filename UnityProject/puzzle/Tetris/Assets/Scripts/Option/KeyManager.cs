@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,9 +22,7 @@ public enum KeyAction
 public static class KeySetting
 { 
     public static Dictionary<KeyAction, KeyCode> keys1 = new Dictionary<KeyAction, KeyCode>();
-    public static Dictionary<KeyAction, KeyCode> keys2 = new Dictionary<KeyAction, KeyCode>();
-
-    
+    public static Dictionary<KeyAction, KeyCode> keys2 = new Dictionary<KeyAction, KeyCode>();    
 }
 public class KeyManager
 {
@@ -73,7 +72,34 @@ public class KeyManager
             
         }
     }
+    public void SetPlayerKeyCode(int playerIndex,int index,KeyCode keyCode)
+    {
+        if (playerIndex == 1)
+        {
+            Debug.Log("키코드 맞냐?"+keyCode);
+            playerKeys1[index] = keyCode;
+        }
+        else if (playerIndex == 2)
+        {
+            playerKeys2[index] = keyCode;
+        }
+        return;
+    }
     
+    public KeyCode GetPlayerKeyCode(int playerIndex,int index)
+    {
+        if(playerIndex == 1)
+        {            
+            return playerKeys1[index];
+        }
+        else if(playerIndex==2)
+        {
+            return playerKeys2[index];
+        }
+
+        return KeyCode.None;
+        
+    }
     //public void ChangeKeySetting()
 
     //버튼을 누르면 그 버튼의 키값을 불러오는 것

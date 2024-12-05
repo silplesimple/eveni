@@ -6,7 +6,7 @@ using UnityEngine;
 //매니저급 클래스를 하나만 두기위해 사용
 public class Singleton<T> : MonoBehaviour where T : Component
 {
-    private static T instance;
+    private static T instance;    
 
     public static T Instance
     {

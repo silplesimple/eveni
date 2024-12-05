@@ -21,19 +21,21 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
 
         KeyManager = new KeyManager();
-        UIManager = FindObjectOfType<UIManager>();
+        UIManager = GetComponentInChildren<UIManager>();
         HandleToSave = new HandleToSave();
         ScoreManager= new ScoreManager();
         
         KeyManager.Init(this);
         UIManager.Init(this);
         ScoreManager.Init(this);
+        HandleToSave.Init(this);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        HandleToSave.LoadOptionData();
+        //HandleToSave.SaveOptionData();
     }
 
     // Update is called once per frame
